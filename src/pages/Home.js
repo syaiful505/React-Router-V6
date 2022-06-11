@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const [users, setUsers] = useState([]);
+    const navigate = useNavigate();
+
     useEffect(() => {
       fetch("https://jsonplaceholder.typicode.com/users")
         .then((resp) => resp.json())
@@ -12,7 +15,7 @@ const Home = () => {
     }, []);
 
     const handleGoToDetail= (id) => {
-      console.log(id);
+      navigate(`/detail/${id}`)
     };
 
     return (
