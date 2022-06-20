@@ -1,5 +1,7 @@
 import {
-  useParams
+  useParams,
+  Outlet,
+  Link
 } from 'react-router-dom';
 import {
   useState,
@@ -31,8 +33,14 @@ const Detail = () => {
   } < /h2> <
   pre > {
     JSON.stringify(user, null, 2)
-  } < /pre> < /
-  div >
+  } </pre>
+    <hr />
+    <nav>
+      <Link to="post">POST</Link> | 
+      <Link to="product">PRODUCT</Link>
+    </nav>
+    <Outlet />
+    < /div >
 }
 
 export default Detail;
